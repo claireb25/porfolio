@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class UserController extends Controller
 {
     /**
-     * @Route("/user", name="user")
+     * @Route("/admin", name="admin")
      */
     public function index()
     {
