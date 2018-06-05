@@ -53,9 +53,9 @@ class User implements UserInterface
      */
     private $roles;
 
-    public function __construct() {
-        $this->roles = array('ROLE_USER');
-    }
+    // public function __construct() {
+    //     $this->roles = array('ROLE_USER');
+    // }
 
     // other properties and methods
 
@@ -109,6 +109,11 @@ class User implements UserInterface
     public function getRoles()
     {
         return $this->roles;
+    }
+
+    public function setRoles(array $roles):void
+    {
+        $this->roles= $roles;
     }
 
     public function eraseCredentials()
