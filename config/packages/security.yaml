@@ -4,7 +4,7 @@ security:
         App\Entity\User:
             algorithm: bcrypt
     providers:
-        in_memory: { memory: ~ }
+        # in_memory: { memory: ~ }
         our_db_provider:
             entity:
                 class: App\Entity\User
@@ -13,8 +13,8 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-         main:
-            pattern:    ^/
+        main:
+            pattern: ^/
             http_basic: ~
             provider: our_db_provider
 
