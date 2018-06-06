@@ -7,18 +7,21 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+
 /**
  * @ORM\Entity
  * @UniqueEntity(fields="email", message="Email already taken")
  * @UniqueEntity(fields="username", message="Username already taken")
  */
-class User implements UserInterface
+class User implements UserInterface 
 {
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
+
+   
     private $id;
 
     /**
@@ -30,7 +33,6 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
-     * @Assert\NotBlank()
      */
     private $username;
 
@@ -45,6 +47,8 @@ class User implements UserInterface
      * the password, but this works well with bcrypt.
      *
      * @ORM\Column(type="string", length=64)
+     *
+     * @Assert\NotBlank()
      */
     private $password;
 
@@ -119,4 +123,5 @@ class User implements UserInterface
     public function eraseCredentials()
     {
     }
+    
 }

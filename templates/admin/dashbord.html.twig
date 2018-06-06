@@ -1,5 +1,8 @@
 {% extends 'base.html.twig' %}
+{% block logout %} <a href="/logout"> Déconnexion</a>
 
+
+{% endblock %}
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
@@ -17,4 +20,6 @@
         <li>Your template at <code><a href="{{ 'templates/user/index.html.twig'|file_link(0) }}">templates/user/index.html.twig</a></code></li>
     </ul>
 </div>
+
+
 {% endblock %}
