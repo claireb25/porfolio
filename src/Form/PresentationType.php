@@ -12,7 +12,7 @@ class PresentationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
+            ->add('nom')
             ->add('description')
             ->add('email_address')
             ->add('phone_number')

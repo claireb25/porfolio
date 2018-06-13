@@ -8,18 +8,17 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Place_name</th>
-                <th>actions</th>
+                <th>Entreprises/Ecoles</th>
+             
             </tr>
         </thead>
         <tbody>
         {% for place in places %}
             <tr>
-                <td>{{ place.id }}</td>
+
                 <td>{{ place.placeName }}</td>
                 <td>
-                    <a href="{{ path('places_show', {'id': place.id}) }}">show</a>
+            
                     <a href="{{ path('places_edit', {'id': place.id}) }}">edit</a>
                 </td>
             </tr>

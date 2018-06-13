@@ -1,45 +1,48 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Presentation index{% endblock %}
+{% block title %}Profil{% endblock %}
 
 {% block body %}
-    <h1>Presentation index</h1>
+    <h1>Profil</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
+                <th>Nom</th>
                 <th>Description</th>
-                <th>Email_address</th>
-                <th>Phone_number</th>
-                <th>Linkedin_link</th>
-                <th>Github_link</th>
-                <th>actions</th>
+                <th>E-mail</th>
+                <th>Numéro de téléphone</th>
+                <th>Linkedin</th>
+                <th>Github</th>
+               
             </tr>
         </thead>
         <tbody>
         {% for presentation in presentations %}
             <tr>
-                <td>{{ presentation.id }}</td>
-                <td>{{ presentation.name }}</td>
+                <td>{{ presentation.nom }}</td>
                 <td>{{ presentation.description }}</td>
                 <td>{{ presentation.emailAddress }}</td>
                 <td>{{ presentation.phoneNumber }}</td>
                 <td>{{ presentation.linkedinLink }}</td>
                 <td>{{ presentation.githubLink }}</td>
                 <td>
-                    <a href="{{ path('presentation_show', {'id': presentation.id}) }}">show</a>
-                    <a href="{{ path('presentation_edit', {'id': presentation.id}) }}">edit</a>
+              
+                    <a href="{{ path('presentation_edit', {'id': presentation.id}) }}">Modifier</a>
+                    <form method="post" action="{{ path('presentation_delete', {'id': presentation.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ presentation.id) }}">
+                        <button class="btn">Supprimer</button>
+                    </form>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="8">Aucunes données enregistrées</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('presentation_new') }}">Create new</a>
+    <a href="{{ path('presentation_new') }}">Nouveau profil</a>
 {% endblock %}

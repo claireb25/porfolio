@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Countries{% endblock %}
+{% block title %}Pays - Modifier{% endblock %}
 
 {% block body %}
-    <h1>Edit Countries</h1>
+    <h1>Modifier</h1>
 
-    {{ include('countries/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('countries/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('countries_index') }}">back to list</a>
+    <a href="{{ path('countries_index') }}">retour</a>
 
-    {{ include('countries/_delete_form.html.twig') }}
+    
 {% endblock %}

@@ -3,11 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}<link rel="stylesheet" href="{{ asset('build/css/app.css') }}">{% endblock %}
     </head>
     <body>
+        {% block sidenav %}
+        <nav class="sidenav">
+            <li><a href="/admin/presentation">Profil</a></li>
+            <li><a href="/admin/experiences">Expériences</a></li>
+            <li><a href="/admin/school">Formation</a></li>
+            <li><a href="/admin/skills">Compétences</a></li>
+            <li><a href="/admin/projects">Projets</a></li>
+            <li><a href="/admin/blog/articles">Blog</a></li>
+        </nav>
+        {% endblock %}
         {% block logout %}{% endblock %}
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}<script src="{{ asset('build/js/app.js') }}"></script>{% endblock %}
     </body>
 </html>

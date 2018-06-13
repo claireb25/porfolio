@@ -1,35 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}School index{% endblock %}
+{% block title %}Formation - accueil{% endblock %}
 
 {% block body %}
-    <h1>School index</h1>
+    <h1>Formation</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Diploma_name</th>
-                <th>actions</th>
+            
+                <th>Diplome</th>
+            
             </tr>
         </thead>
         <tbody>
         {% for school in schools %}
             <tr>
-                <td>{{ school.id }}</td>
+           
                 <td>{{ school.diplomaName }}</td>
                 <td>
-                    <a href="{{ path('school_show', {'id': school.id}) }}">show</a>
-                    <a href="{{ path('school_edit', {'id': school.id}) }}">edit</a>
+                   
+                    <a href="{{ path('school_edit', {'id': school.id}) }}">Modifier</a>
+                    {{ include('school/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucune donnée enregistrée</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('school_new') }}">Create new</a>
+    <a href="{{ path('school_new') }}">Nouveau</a>
 {% endblock %}

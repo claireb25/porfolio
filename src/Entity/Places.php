@@ -55,6 +55,9 @@ class Places
     {
         return $this->id;
     }
+    public function __toString() {
+        return $this->place_name;
+    }
 
     public function getPlaceName(): ?string
     {

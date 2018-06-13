@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit School{% endblock %}
+{% block title %}Formation - modifier{% endblock %}
 
 {% block body %}
-    <h1>Edit School</h1>
+    <h1>Modifier</h1>
 
-    {{ include('school/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('school/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('school_index') }}">back to list</a>
+    <a href="{{ path('school_index') }}">retour</a>
 
-    {{ include('school/_delete_form.html.twig') }}
+  
 {% endblock %}

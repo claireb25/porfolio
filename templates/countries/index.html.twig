@@ -1,35 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Countries index{% endblock %}
+{% block title %}Pays{% endblock %}
 
 {% block body %}
-    <h1>Countries index</h1>
+    <h1>Tous les pays</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Country</th>
-                <th>actions</th>
+                <th>Pays</th>
+ 
             </tr>
         </thead>
         <tbody>
+        
         {% for country in countries %}
             <tr>
-                <td>{{ country.id }}</td>
+              
                 <td>{{ country.country }}</td>
                 <td>
-                    <a href="{{ path('countries_show', {'id': country.id}) }}">show</a>
-                    <a href="{{ path('countries_edit', {'id': country.id}) }}">edit</a>
+               
+                    <a href="{{ path('countries_edit', {'id': country.id}) }}">Modifier</a>
+                    <form method="post" action="{{ path('countries_delete', {'id': country.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ country.id) }}">
+                        <button class="btn">Supprimer</button>
+                    </form>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucune donnée enregistrée</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('countries_new') }}">Create new</a>
+    <a href="{{ path('countries_new') }}">Nouveau</a>
 {% endblock %}
