@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Année - modifier{% endblock %}
+
+{% block body %}
+    <h1>Modifier l'année</h1>
+
+    {{ include('dates/_form.html.twig', {'button_label': 'Modifier'}) }}
+    {{ include('dates/_delete_form.html.twig') }}
+    <a href="{{ path('dates_index') }}">retour</a>
+
+    
+{% endblock %}

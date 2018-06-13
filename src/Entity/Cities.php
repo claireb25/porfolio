@@ -39,6 +39,9 @@ class Cities
         $this->places = new ArrayCollection();
     }
 
+    public function __toString() {
+        return $this->city;
+    }
     public function getId()
     {
         return $this->id;

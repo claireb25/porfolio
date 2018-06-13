@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes les années{% endblock %}
+
+{% block body %}
+    <h1>Années</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Années</th>
+   
+            </tr>
+        </thead>
+        <tbody>
+        {% for date in dates %}
+            <tr>
+     
+                <td>{{ date.year }}</td>
+                <td>
+                <a href="{{ path('dates_edit', {'id': date.id}) }}">modifier</a>
+                <form method="post" action="{{ path('dates_delete', {'id': date.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ date.id) }}">
+                    <button class="btn">Supprimer</button>
+                </form>
+                    
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">aucune année trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('dates_new') }}">Nouvelle année</a>
+{% endblock %}

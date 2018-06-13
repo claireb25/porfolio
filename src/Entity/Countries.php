@@ -33,6 +33,10 @@ class Countries
         $this->cities = new ArrayCollection();
     }
 
+    public function __toString() {
+        return $this->country;
+    }
+    
     public function getId()
     {
         return $this->id;
