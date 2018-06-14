@@ -1,0 +1,48 @@
+nav{
+    background-color: $mainblack;
+    width:248px;
+    height:100%;
+    position:fixed;
+    margin-top:250px;
+    margin-left:10px;
+    float:left;
+    margin: 0;
+
+    ul {
+        position: relative;
+        list-style: none;
+        padding: 0;
+        top:47%;
+        -webkit-transform:translateY(-47%);
+        transform:translateY(-47%);
+    }
+    .current{
+        a{
+            background-color: $clickedblue;
+            width:83%;
+        }
+    }
+    .onglet{
+        a{
+            padding: 0 0 0 50px;
+            align-content: center;
+            line-height: 70px;
+        }
+    }
+    a{
+        color: white;
+        background-color: $blue;
+        text-decoration: none;
+        display: block;
+        height:70px;
+        text-transform: uppercase; 
+        // text-align: center;
+        &:hover{
+            background-color: $clickedblue;
+        }  
+    
+    }
+}
+
+
+

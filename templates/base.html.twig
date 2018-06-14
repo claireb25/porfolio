@@ -8,16 +8,14 @@
     <body>
         {% block sidenav %}
         <nav class="sidenav">
-            <li><a href="/admin/presentation">Profil</a></li>
-            <li><a href="/admin/experiences">Expériences</a></li>
-            <li><a href="/admin/school">Formation</a></li>
-            <li><a href="/admin/skills">Compétences</a></li>
-            <li><a href="/admin/projects">Projets</a></li>
-            <li><a href="/admin/blog/articles">Blog</a></li>
+        {{ knp_menu_render('sidebar') }}
         </nav>
+        
         {% endblock %}
+        <main>
         {% block logout %}{% endblock %}
         {% block body %}{% endblock %}
+        </main>
         {% block javascripts %}<script src="{{ asset('build/js/app.js') }}"></script>{% endblock %}
     </body>
 </html>
