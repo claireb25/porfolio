@@ -3,27 +3,19 @@
 {% block title %}Formation - accueil{% endblock %}
 
 {% block body %}
-    <h1>Formation</h1>
+    <h1 class="mainTitle">Formation</h1>
 
     <table class="table">
-        <thead>
-            <tr>
-            
-                <th>Diplome</th>
-            
-            </tr>
-        </thead>
         <tbody>
         {% for school in schools %}
-            <tr>
-           
-                <td>{{ school.diplomaName }}</td>
-                <td>
-                   
-                    <a href="{{ path('school_edit', {'id': school.id}) }}">Modifier</a>
+            <div class="editDelete alignRight">
+                <h3>{{ school.diplomaName }}</h3>
+                <div class="buttons">
+                    <a href="{{ path('school_edit', {'id': school.id}) }}" class="change">Modifier</a>
                     {{ include('school/_delete_form.html.twig') }}
-                </td>
-            </tr>
+                </div>              
+            </div>
+           
         {% else %}
             <tr>
                 <td colspan="3">Aucune donnée enregistrée</td>
@@ -32,5 +24,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('school_new') }}">Nouveau</a>
+    <a href="{{ path('school_new') }}" class="new">Nouveau</a>
 {% endblock %}

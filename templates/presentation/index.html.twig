@@ -6,33 +6,24 @@
     <h1>Profil</h1>
 
     <table class="table">
-        <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>E-mail</th>
-                <th>Numéro de téléphone</th>
-                <th>Linkedin</th>
-                <th>Github</th>
-               
-            </tr>
-        </thead>
+     
         <tbody>
         {% for presentation in presentations %}
             <tr>
-                <td>{{ presentation.nom }}</td>
-                <td>{{ presentation.description }}</td>
-                <td>{{ presentation.emailAddress }}</td>
-                <td>{{ presentation.phoneNumber }}</td>
-                <td>{{ presentation.linkedinLink }}</td>
-                <td>{{ presentation.githubLink }}</td>
-                <td>
+            <ul class="listPres">
+                <li>Nom : {{ presentation.nom }}</li>
+                <li>Description : {{ presentation.description }}</li>
+                <li>E-mail : {{ presentation.emailAddress }}</li>
+                <li>Numéro de téléphone : {{ presentation.phoneNumber }}</li>
+                <li>Linkedin : {{ presentation.linkedinLink }}</li>
+                <li>Github : {{ presentation.githubLink }}</li>
+            </ul>
               
-                    <a href="{{ path('presentation_edit', {'id': presentation.id}) }}">Modifier</a>
+                    <a href="{{ path('presentation_edit', {'id': presentation.id}) }}" class="change">Modifier</a>
                     <form method="post" action="{{ path('presentation_delete', {'id': presentation.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ presentation.id) }}">
-                        <button class="btn">Supprimer</button>
+                        <button class="btn delete">Supprimer</button>
                     </form>
                 </td>
             </tr>
@@ -44,5 +35,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('presentation_new') }}">Nouveau profil</a>
 {% endblock %}

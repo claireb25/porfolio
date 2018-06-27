@@ -6,6 +6,7 @@
         {% block stylesheets %}<link rel="stylesheet" href="{{ asset('build/css/app.css') }}">{% endblock %}
     </head>
     <body>
+       
         {% block sidenav %}
         <nav class="sidenav">
         {{ knp_menu_render('sidebar') }}
@@ -13,7 +14,7 @@
         
         {% endblock %}
         <main>
-        {% block logout %}{% endblock %}
+        {% block logout %} <a id="btn" href="/logout"> Déconnexion</a>{% endblock %}
         {% block body %}{% endblock %}
         </main>
         {% block javascripts %}<script src="{{ asset('build/js/app.js') }}"></script>{% endblock %}
