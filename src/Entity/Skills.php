@@ -27,6 +27,11 @@ class Skills
      * @ORM\ManyToMany(targetEntity="App\Entity\Projects", mappedBy="skill")
      */
     private $projects;
+    
+    public function __toString() 
+    {
+        return $this->skill;
+    }
 
     public function __construct()
     {

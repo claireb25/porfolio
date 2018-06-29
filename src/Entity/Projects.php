@@ -58,6 +58,8 @@ class Projects
      */
     private $sec_img;
 
+    
+
     public function __construct()
     {
         $this->skill = new ArrayCollection();
