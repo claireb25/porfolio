@@ -3,37 +3,32 @@
 {% block title %}Projects index{% endblock %}
 
 {% block body %}
-    <h1>Projects index</h1>
+    <h1>Liste des projets</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Project_name</th>
-                <th>Project_description</th>
-                <th>Link_to_project</th>
-                <th>actions</th>
+                <th>Nom du projet</th>
             </tr>
         </thead>
         <tbody>
         {% for project in projects %}
             <tr>
-                <td>{{ project.id }}</td>
+               
                 <td>{{ project.projectName }}</td>
-                <td>{{ project.projectDescription }}</td>
-                <td>{{ project.linkToProject }}</td>
+                
                 <td>
-                    <a href="{{ path('projects_show', {'id': project.id}) }}">show</a>
-                    <a href="{{ path('projects_edit', {'id': project.id}) }}">edit</a>
+                    <a href="{{ path('projects_show', {'id': project.id}) }}">voir</a>
+                    <a href="{{ path('projects_edit', {'id': project.id}) }}">modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucun projet enregistré</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('projects_new') }}">Create new</a>
+    <a href="{{ path('projects_new') }}"><button>Nouveau</button></a>
 {% endblock %}

@@ -27,6 +27,10 @@ class Images
      * @ORM\ManyToMany(targetEntity="App\Entity\BlogArticles", mappedBy="image")
      */
     private $blogArticles;
+    public function __toString()
+    {
+    return $this->picture;
+    }
 
     public function __construct()
     {

@@ -1,26 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Projects{% endblock %}
+{% block title %}{{ project.projectName }}{% endblock %}
 
 {% block body %}
-    <h1>Projects</h1>
+    <h1>{{ project.projectName }}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ project.id }}</td>
-            </tr>
-            <tr>
-                <th>Project_name</th>
+                <th>Nom du projet</th>
                 <td>{{ project.projectName }}</td>
             </tr>
             <tr>
-                <th>Project_description</th>
+                <th>Description</th>
                 <td>{{ project.projectDescription }}</td>
             </tr>
             <tr>
-                <th>Link_to_project</th>
+                <th>Lien vers le projet</th>
                 <td>{{ project.linkToProject }}</td>
             </tr>
         </tbody>

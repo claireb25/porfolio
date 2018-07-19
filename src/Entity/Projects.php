@@ -58,6 +58,11 @@ class Projects
      */
     private $sec_img;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $github_link;
+
     
 
     public function __construct()
@@ -176,6 +181,18 @@ class Projects
     public function setSecImg(?Images $sec_img): self
     {
         $this->sec_img = $sec_img;
+
+        return $this;
+    }
+
+    public function getGithubLink(): ?string
+    {
+        return $this->github_link;
+    }
+
+    public function setGithubLink(?string $github_link): self
+    {
+        $this->github_link = $github_link;
 
         return $this;
     }

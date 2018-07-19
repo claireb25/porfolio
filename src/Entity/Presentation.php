@@ -52,6 +52,11 @@ class Presentation
      */
     private $place;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $CV;
+
 
     public function getId()
     {
@@ -155,6 +160,18 @@ class Presentation
     public function setPlace(Places $place): self
     {
         $this->place = $place;
+
+        return $this;
+    }
+
+    public function getCV(): ?string
+    {
+        return $this->CV;
+    }
+
+    public function setCV(?string $CV): self
+    {
+        $this->CV = $CV;
 
         return $this;
     }
