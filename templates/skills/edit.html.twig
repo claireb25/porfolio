@@ -3,11 +3,11 @@
 {% block title %}Edit Skills{% endblock %}
 
 {% block body %}
-    <h1>Modifier {{skills.skill}}</h1>
+    <h1>Modifier {{skill.skill}}</h1>
 
     {{ include('skills/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('skills_index') }}">Retour</a>
+    <a href="{{ path('skills_index') }}" >Retour</a>
 
-    {{ include('skills/_delete_form.html.twig') }}
+   
 {% endblock %}

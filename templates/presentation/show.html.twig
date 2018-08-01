@@ -3,44 +3,46 @@
 {% block title %}Presentation{% endblock %}
 
 {% block body %}
-    <h1>Presentation</h1>
-
-    <table class="table">
-        <tbody>
+<section class="content-show">
+        <a class="back-buttons" href="{{ path('presentation_index') }}" >
+            <svg class="backtolist" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129" width="512px" height="512px"><g><g>
+            <path d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z" data-original="#000000" class="active-path" fill="#008E9E"/>
+            </g></g> </svg>
+            <p class="back">retour</p>
+        </a>
+   <div class="title-and-button">
+    <h1 class="title-experience">Profil de {{ presentation.nom }}</h1>
+      <a href="{{ path('presentation_edit', {'id': presentation.id}) }} "class="new">Modifier</a>
+    </div>
+    <table class="table-index">
+        <tbody class="table-presentation">
+          
             <tr>
-                <th>Id</th>
-                <td>{{ presentation.id }}</td>
+                <th class="title-table">Nom</th>
+                <td class="content-presentation">{{ presentation.nom }}</td>
             </tr>
             <tr>
-                <th>Name</th>
-                <td>{{ presentation.name }}</td>
+                <th class="title-table">Déscription</th>
+                <td class="content-presentation">{{ presentation.description }}</td>
             </tr>
             <tr>
-                <th>Description</th>
-                <td>{{ presentation.description }}</td>
+                <th class="title-table">E-mail</th>
+                <td class="content-presentation">{{ presentation.emailAddress }}</td>
             </tr>
             <tr>
-                <th>Email_address</th>
-                <td>{{ presentation.emailAddress }}</td>
+                <th class="title-table">Mobile</th>
+                <td class="content-presentation">+33 {{ presentation.phoneNumber }}</td>
             </tr>
             <tr>
-                <th>Phone_number</th>
-                <td>{{ presentation.phoneNumber }}</td>
+                <th class="title-table">Linkedin</th>
+                <td class="content-presentation">{{ presentation.linkedinLink }}</td>
             </tr>
             <tr>
-                <th>Linkedin_link</th>
-                <td>{{ presentation.linkedinLink }}</td>
-            </tr>
-            <tr>
-                <th>Github_link</th>
-                <td>{{ presentation.githubLink }}</td>
+                <th class="title-table">GitHub</th>
+                <td class="content-presentation">{{ presentation.githubLink }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('presentation_index') }}">back to list</a>
-
-    <a href="{{ path('presentation_edit', {'id': presentation.id}) }}">edit</a>
-
-    {{ include('presentation/_delete_form.html.twig') }}
+</section>
 {% endblock %}

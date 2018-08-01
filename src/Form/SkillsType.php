@@ -13,9 +13,9 @@ class SkillsType extends AbstractType
     {
         $builder
             ->add('skill', TextType::class, array(
-                'label'=>'Compétence'
+                'label'=>'Compétence '
             ))
-            ->add('projects')
+            // ->add('projects')
         ;
     }
 

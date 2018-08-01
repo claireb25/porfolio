@@ -63,7 +63,9 @@ class Projects
      */
     private $github_link;
 
-    
+    public function __toString() {
+        return $this->project_name;
+    }
 
     public function __construct()
     {

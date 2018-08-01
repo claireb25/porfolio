@@ -1,45 +1,67 @@
 nav{
     background-color: $mainblack;
     width:248px;
-    height:100%;
-    position:fixed;
-    margin-top:250px;
-    margin-left:10px;
-    float:left;
+    height:100vh;
     margin: 0;
-
+    font-size: 16px;
     ul {
-        position: relative;
+        // position: relative;
         list-style: none;
         padding: 0;
-        top:47%;
-        -webkit-transform:translateY(-47%);
-        transform:translateY(-47%);
+        // top:47%;
+        // -webkit-transform:translateY(-47%);
+        // transform:translateY(-47%);
     }
     .current{
         a{
-            background-color: $clickedblue;
-            width:83%;
+            color: $blue;
+            height: auto;
+            border-left: 6px solid $blue;
         }
     }
     .onglet{
+        width: 80%;
         a{
-            padding: 0 0 0 50px;
+            padding: 0 0 0 30px;
             align-content: center;
             line-height: 70px;
+            text-transform: uppercase; 
+            border-bottom: 1px #42454D solid;
+            
+        }
+        &:nth-child(n+2){
+            border-top: 1px #2E3036 solid ;
         }
     }
+    .onglet-no-click{
+        color: white;
+        width: 80%;
+        padding: 0 0 0 30px;
+        align-content: center;
+        line-height: 50px;
+        text-transform: uppercase; 
+        border-top: 1px #2E3036 solid ;
+    }
+    .subonglet{
+        width:80%;
+        a{
+            padding: 0 0 0 60px;
+            align-content: center;
+            line-height: 40px;
+        }
+    }
+    
     a{
         color: white;
-        background-color: $blue;
+        background-color: $mainblack;
         text-decoration: none;
         display: block;
-        height:70px;
-        text-transform: uppercase; 
+        // height:70px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         // text-align: center;
         &:hover{
-            background-color: $clickedblue;
+            background-color: $mainblack;
+            color: $blue;
         }  
     
     }

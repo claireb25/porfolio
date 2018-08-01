@@ -29,7 +29,12 @@ class MenuBuilder
         $menu->addChild('Formation', ['route' => 'school_index'])->setAttribute('class','onglet');
         $menu->addChild('Compétences', ['route' => 'skills_index'])->setAttribute('class','onglet');
         $menu->addChild('Projets', ['route' => 'projects_index'])->setAttribute('class','onglet');
-        $menu->addChild('Blog', ['route' => 'blog_articles_index'])->setAttribute('class','onglet');
+        $menu->addChild('Autres', ['route' => ''])->setAttribute('class', 'onglet-no-click');
+        $menu->addChild('Années', ['route' => 'dates_index'])->setAttribute('class','subonglet');
+        $menu->addChild('Villes', ['route' => 'cities_index'])->setAttribute('class','subonglet');
+        $menu->addChild('Pays', ['route' => 'countries_index'])->setAttribute('class','subonglet');
+        $menu->addChild('Entreprises', ['route' => 'places_index'])->setAttribute('class','subonglet');
+        $menu->addChild('Images', ['route' => 'images_index'])->setAttribute('class','subonglet');
         return $menu;
     }
 }
