@@ -65,7 +65,7 @@ class PresentationController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('presentation_edit', ['id' => $presentation->getId()]);
+            return $this->redirectToRoute('presentation_show', ['id' => $presentation->getId()]);
         }
 
         return $this->render('presentation/edit.html.twig', [

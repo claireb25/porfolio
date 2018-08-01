@@ -65,7 +65,7 @@ class ExperiencesController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('experiences_edit', ['id' => $experience->getId()]);
+            return $this->redirectToRoute('experiences_show', ['id' => $experience->getId()]);
         }
 
         return $this->render('experiences/edit.html.twig', [

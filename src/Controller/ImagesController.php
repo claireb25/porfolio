@@ -65,7 +65,7 @@ class ImagesController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('images_edit', ['id' => $image->getId()]);
+            return $this->redirectToRoute('images_index', ['id' => $image->getId()]);
         }
 
         return $this->render('images/edit.html.twig', [

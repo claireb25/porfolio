@@ -16,7 +16,7 @@ class CountriesType extends AbstractType
             ->add('country', TextType::class, array(
                 'label' => 'Pays '
             ))
-            ->add('cities')
+
         ;
     }
 

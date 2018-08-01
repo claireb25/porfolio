@@ -1,0 +1,50 @@
+
+  .content-show{
+    margin-left: 300px;
+    margin-top: 50px;
+    margin-right: 40px;
+    width: 60%;
+    .back-buttons{
+        display: flex;
+    
+        align-items: center;
+        .backtolist{
+            height: 12px;
+            width: auto;
+           
+        }
+    }
+    .title-and-button{
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        a{
+            margin: 0 30px;
+        }
+        h1{
+            margin:0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+    }
+    .table-index{
+        // border-bottom: 1px $blue solid;
+        border-left:4px $blue solid;
+        // border-top: 1px $blue solid;
+        // border-right:1px $blue solid;
+        
+        .title-table{
+            padding: 20px;
+            text-align: left;
+            font-size: 15px;
+            width: 150px;
+            
+        }
+        .content-presentation{
+            font-size: 15px;
+            margin-left: 50px;
+        }
+    } 
+  }

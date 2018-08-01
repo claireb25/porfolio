@@ -65,7 +65,7 @@ class SchoolController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('school_edit', ['id' => $school->getId()]);
+            return $this->redirectToRoute('school_show', ['id' => $school->getId()]);
         }
 
         return $this->render('school/edit.html.twig', [

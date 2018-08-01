@@ -1,0 +1,60 @@
+form{
+    width: 70%;
+ 
+    div{
+       
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+           
+            label{
+                width: 30%;
+                font-size: 15px;
+                margin-right: 20px;
+            }
+            input[type="text"]{
+                width: 70%; 
+                height: 30px;
+                border: 3px solid #f1f1f1;
+                border-radius: 4px;
+                padding: 6px 6px;
+                margin: 10px ;
+                color : $blue;
+            }
+            
+            textarea{
+                width: 70%;
+                height: 150px;
+                padding: 12px 6px;
+                box-sizing: border-box;
+                border: 3px solid #f1f1f1;
+                border-radius: 4px;
+                margin:  10px;
+                resize: none;
+                color : $blue;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            
+            select {
+                width: 70%;
+                padding: 16px 6px;
+                border: none;
+                border-radius: 4px;
+                background-color: #f1f1f1;
+                margin : 10px;
+                color : $blue;
+            }
+        }
+        
+
+    }
+}
+.flex-button{
+    display: flex;
+    justify-content: center;
+    .margin-new{
+       
+        margin: 20px auto auto auto ;
+    }
+}

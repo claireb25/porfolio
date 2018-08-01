@@ -65,7 +65,7 @@ class SkillsController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('skills_edit', ['id' => $skill->getId()]);
+            return $this->redirectToRoute('skills_show', ['id' => $skill->getId()]);
         }
 
         return $this->render('skills/edit.html.twig', [

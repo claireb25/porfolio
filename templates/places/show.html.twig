@@ -3,24 +3,27 @@
 {% block title %}Places{% endblock %}
 
 {% block body %}
-    <h1>Places</h1>
-
-    <table class="table">
-        <tbody>
+<section class="content-show">
+    <a class="back-buttons" href="{{ path('places_index') }}">
+        <svg class="backtolist" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129" width="512px" height="512px"><g><g>
+        <path d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z" data-original="#000000" class="active-path" fill="#008E9E"/>
+        </g></g> </svg>
+        <p class="back">Toutes les entreprises</p>
+        </a>
+         <div class="title-and-button">
+    <h1>{{ place.placeName }}</h1>
+<a href="{{ path('places_edit', {'id': place.id}) }} "class="new">Modifier</a>
+    </div>
+    <table class="table-index">
+        <tbody class="table-presentation">
             <tr>
-                <th>Id</th>
-                <td>{{ place.id }}</td>
-            </tr>
-            <tr>
-                <th>Place_name</th>
-                <td>{{ place.placeName }}</td>
+                <th class="title-table">Nom de l'entreprise</th>
+                <td class="content-presentation">{{ place.placeName }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('places_index') }}">back to list</a>
+</section>
 
-    <a href="{{ path('places_edit', {'id': place.id}) }}">edit</a>
 
-    {{ include('places/_delete_form.html.twig') }}
 {% endblock %}

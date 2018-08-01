@@ -15,7 +15,7 @@
         <main>
             {% block sidenav %}
                 <nav class="sidenav">
-                    {{ knp_menu_render('sidebar') }}
+                    {{ knp_menu_render('sidebar', {'template':'knp_menu.html.twig'}) }}
                 </nav>
             {% endblock %}
        

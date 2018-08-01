@@ -65,7 +65,7 @@ class CountriesController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('countries_edit', ['id' => $country->getId()]);
+            return $this->redirectToRoute('countries_index', ['id' => $country->getId()]);
         }
 
         return $this->render('countries/edit.html.twig', [

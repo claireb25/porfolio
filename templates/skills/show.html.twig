@@ -3,24 +3,26 @@
 {% block title %}Skills{% endblock %}
 
 {% block body %}
-    <h1>Skills</h1>
+<section class="content-show">
+    <a class="back-buttons" href=" {{ path('skills_index') }}">
+        <svg class="backtolist" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129" width="512px" height="512px"><g><g>
+        <path d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z" data-original="#000000" class="active-path" fill="#008E9E"/>
+        </g></g> </svg>
+        <p class="back">Toutes les compétences</p>
+    </a>
+    <div class="title-and-button">
+     <h1 class="title-experience">{{ skill.skill }}</h1>
+     <a href="{{ path('skills_edit', {'id' : skill.id}) }}" class="new">Modifier</a>
+    </div>
 
-    <table class="table">
-        <tbody>
+    <table class="table-index">
+        <tbody class="table-presentation">
             <tr>
-                <th>Id</th>
-                <td>{{ skill.id }}</td>
-            </tr>
-            <tr>
-                <th>Skill</th>
-                <td>{{ skill.skill }}</td>
+                <th class="title-table">Compétences</th>
+                <td class="content-presentation">{{ skill.skill }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('skills_index') }}">back to list</a>
-
-    <a href="{{ path('skills_edit', {'id': skill.id}) }}">edit</a>
-
-    {{ include('skills/_delete_form.html.twig') }}
+</section>
 {% endblock %}

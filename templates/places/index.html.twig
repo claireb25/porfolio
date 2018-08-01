@@ -1,34 +1,41 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Places index{% endblock %}
+{% block title %}Liste de toutes les entreprises/écoles{% endblock %}
 
 {% block body %}
-    <h1>Places index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Entreprises/Ecoles</th>
-             
-            </tr>
-        </thead>
+<section class="content">
+    <div class="title-and-button">
+        <h1>Toutes les entreprises/Ecoles</h1>
+        <a href="{{ path('places_new') }}" class="new">Ajouter</a>
+    </div>
+    <table class="table-index">
         <tbody>
         {% for place in places %}
             <tr>
 
                 <td>{{ place.placeName }}</td>
-                <td>
-            
-                    <a href="{{ path('places_edit', {'id': place.id}) }}">edit</a>
+               
+                <td class="td-button">
+                    <a href="{{ path('places_show', {'id': place.id}) }}"><svg class="see" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 932.15 932.15" style="enable-background:new 0 0 932.15 932.15;" xml:space="preserve"><g><g>
+                    <path d="M466.075,161.525c-205.6,0-382.8,121.2-464.2,296.1c-2.5,5.3-2.5,11.5,0,16.9c81.4,174.899,258.601,296.1,464.2,296.1   s382.8-121.2,464.2-296.1c2.5-5.3,2.5-11.5,0-16.9C848.875,282.725,671.675,161.525,466.075,161.525z M466.075,676.226   c-116.1,0-210.1-94.101-210.1-210.101c0-116.1,94.1-210.1,210.1-210.1c116.1,0,210.1,94.1,210.1,210.1   S582.075,676.226,466.075,676.226z" data-original="#000000" class="active-path" fill="#008E9E"/>
+                    <circle cx="466.075" cy="466.025" r="134.5" data-original="#000000" class="active-path" fill="#008E9E"/>
+                    </g></g> </svg></a>
+                </td>
+                <td class="td-button">
+                    <a href="{{ path('places_edit', {'id': place.id}) }}"><svg class="editpencil" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 485.219 485.22" style="enable-background:new 0 0 485.219 485.22;" xml:space="preserve" class=""><g><g>
+	                <path d="M467.476,146.438l-21.445,21.455L317.35,39.23l21.445-21.457c23.689-23.692,62.104-23.692,85.795,0l42.886,42.897   C491.133,84.349,491.133,122.748,467.476,146.438z M167.233,403.748c-5.922,5.922-5.922,15.513,0,21.436   c5.925,5.955,15.521,5.955,21.443,0L424.59,189.335l-21.469-21.457L167.233,403.748z M60,296.54c-5.925,5.927-5.925,15.514,0,21.44   c5.922,5.923,15.518,5.923,21.443,0L317.35,82.113L295.914,60.67L60,296.54z M338.767,103.54L102.881,339.421   c-11.845,11.822-11.815,31.041,0,42.886c11.85,11.846,31.038,11.901,42.914-0.032l235.886-235.837L338.767,103.54z    M145.734,446.572c-7.253-7.262-10.749-16.465-12.05-25.948c-3.083,0.476-6.188,0.919-9.36,0.919   c-16.202,0-31.419-6.333-42.881-17.795c-11.462-11.491-17.77-26.687-17.77-42.887c0-2.954,0.443-5.833,0.859-8.703   c-9.803-1.335-18.864-5.629-25.972-12.737c-0.682-0.677-0.917-1.596-1.538-2.338L0,485.216l147.748-36.986   C147.097,447.637,146.36,447.193,145.734,446.572z" data-original="#000000" class="active-path" data-old_color="#005BFF" fill="#008E9E"/></a>
+                </td>
+                <td class="td-button">
+                {{ include('places/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucune entreprise renseignée</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('places_new') }}">Create new</a>
+  </section>
 {% endblock %}

@@ -65,7 +65,7 @@ class DatesController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('dates_edit', ['id' => $date->getId()]);
+            return $this->redirectToRoute('dates_index', ['id' => $date->getId()]);
         }
 
         return $this->render('dates/edit.html.twig', [

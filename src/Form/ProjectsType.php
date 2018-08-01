@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
 use App\Entity\Dates;
 use App\Entity\Places;
 use App\Entity\Skills;
@@ -26,12 +27,19 @@ class ProjectsType extends AbstractType
                 'class' => Dates::class,
                 'label' => 'Année de réalisation ',
             ) )
-            ->add('project_description' )
+            ->add('project_description',TextType::class, array(
+                'label' => 'Description',
+            ) )
             ->add('place',EntityType::class, array(
                 'class' => Places::class,
                 'label' => 'Entreprise/Ecole ',
             ) )
-            ->add('skill')
+            ->add('skill', EntityType::class, [
+                'class' => Skills::class,
+                'multiple' => true,
+                'label' => 'Compétences']
+                )
+
             ->add('main_img',EntityType::class, array(
                 'class' => Images::class,
                 'label' => 'Image principale ',

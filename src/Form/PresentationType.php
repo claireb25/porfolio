@@ -3,10 +3,13 @@
 namespace App\Form;
 
 use App\Entity\Presentation;
+use App\Entity\Places;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class PresentationType extends AbstractType
 {
@@ -16,14 +19,14 @@ class PresentationType extends AbstractType
             ->add('nom',TextType::class, array(
                 'label' => 'Nom et prénom ',
             ))
-            ->add('description' ,TextType::class, array(
+            ->add('description' ,TextareaType::class, array(
                 'label' => 'Déscription ',
             ))
             ->add('email_address',TextType::class, array(
                 'label' => 'E-mail ',
             ))
             ->add('phone_number',TextType::class, array(
-                'label' => 'Téléphone ',
+                'label' => 'Téléphone +33 ',
             ))
             ->add('linkedin_link',TextType::class, array(
                 'label' => 'Linkedin ',
@@ -34,8 +37,9 @@ class PresentationType extends AbstractType
             ->add('cv',TextType::class, array(
                 'label' => 'CV ',
             ))
-            ->add('place',TextType::class, array(
-                'label' => 'Entreprise actuelle ',
+            ->add('place', EntityType::class, array(
+                'class' => Places::class,
+                'label' => 'Entreprise'
             ))
         ;
     }

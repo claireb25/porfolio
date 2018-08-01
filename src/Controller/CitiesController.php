@@ -65,7 +65,7 @@ class CitiesController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('cities_edit', ['id' => $city->getId()]);
+            return $this->redirectToRoute('cities_index', ['id' => $city->getId()]);
         }
 
         return $this->render('cities/edit.html.twig', [
