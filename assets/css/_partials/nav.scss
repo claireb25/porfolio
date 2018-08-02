@@ -13,11 +13,14 @@ nav{
         // -webkit-transform:translateY(-47%);
         // transform:translateY(-47%);
     }
-    .current{
+    .current, .current_ancestor{
         a{
             color: $blue;
             height: auto;
             border-left: 6px solid $blue;
+        }
+        .menu_level_1{
+            display: none;
         }
     }
     .onglet{
@@ -32,6 +35,9 @@ nav{
         }
         &:nth-child(n+2){
             border-top: 1px #2E3036 solid ;
+        }
+        .menu_level_1{
+            display: none;
         }
     }
     .onglet-no-click{
@@ -49,6 +55,9 @@ nav{
             padding: 0 0 0 60px;
             align-content: center;
             line-height: 40px;
+        }
+        .menu_level_1{
+            display: none;
         }
     }
     
